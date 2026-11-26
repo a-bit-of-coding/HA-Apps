@@ -1,0 +1,24 @@
+services:
+  zeitarchiv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD_VERSION: "0.90.2"
+        BUILD_ARCH: "amd64"
+
+    image: zeitarchiv:0.90.2-local
+    container_name: zeitarchiv
+    environment:
+      HA_API_BASE: ${HA_API_BASE}
+      HA_WS_URL: ${HA_WS_URL}
+      HA_ACCESS_TOKEN: ${HA_ACCESS_TOKEN}
+
+    restart: unless-stopped
+
+    ports:
+      - "8099:8099"
+      - "8127:8127"
+
+    volumes:
+      - /home/slim/docker-volumes/zeitarchiv-data/zeitarchiv-data:/data
