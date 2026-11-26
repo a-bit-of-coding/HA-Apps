@@ -348,7 +348,7 @@ body::before{
    <canvas> oder eine Maus-Koordinate. Skaliert bewusst nur Schriftgrößen,
    nicht Abstände/Breiten (bleiben in px). */
 body{background:var(--bg);color:var(--ink);font-family:var(--font-display);margin:0;padding:32px 24px 64px;font-size:calc(15px * var(--font-scale, 1));line-height:1.5;-webkit-font-smoothing:antialiased;}
-:root{--page-max:1120px;--page-narrow:1120px;}
+:root{--page-max:100%;--page-narrow:1120px;}
 .page{max-width:var(--page-max);margin:0 auto;min-width:0;}
 button{font-family:inherit;}
 code,.mono{font-family:var(--font-mono);}
@@ -2550,7 +2550,8 @@ button.entity-tab{background:none;border:0;cursor:pointer;font-family:inherit;}
 .wt-table-full tbody th:first-child,.wt-table-full tbody td:first-child{white-space:normal;}
 .wt-table.wt-table-full th,.wt-table.wt-table-full td{padding-left:6px;padding-right:6px;}
 .wt-table.wt-table-full td.wt-sep,.wt-table.wt-table-full thead th.wt-cur{padding-left:10px;}
-.wt-table{border-collapse:separate;border-spacing:0;width:auto;font-variant-numeric:tabular-nums;font-size:calc(13.5px * var(--font-scale, 1));}
+/* Tabellen zu 100% um die maximale Breite auszunutzen */
+.wt-table{border-collapse:separate;border-spacing:0;width:100%;font-variant-numeric:tabular-nums;font-size:calc(13.5px * var(--font-scale, 1));}
 .wt-table th,.wt-table td{padding:5px 10px;text-align:right;border-bottom:1px solid var(--border);vertical-align:middle;white-space:nowrap;}
 .wt-table thead th{font-weight:600;font-size:calc(12.5px * var(--font-scale, 1));color:var(--ink);border-bottom:1.5px solid var(--border-strong);}
 .wt-table thead th.wt-cur{padding-left:18px;cursor:help;}
